@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="/Styles/base.css"
+            xmlns="http://javafx.com/javafx/17" fx:controller="controller.AccountOperationsController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="header-label" text="Account Operations">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="20.0"/>
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="welcomeLabel" text="Welcome, User">
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+                <ComboBox fx:id="accountTypeComboBox" prefWidth="250.0" promptText="Select Account Type">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="SAVINGS"/>
+                            <String fx:value="CHECKING"/>
+                            <String fx:value="FIXED_DEPOSIT"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+                <Button fx:id="createAccountBtn" maxWidth="300.0" mnemonicParsing="false"
+                        onAction="#handleCreateAccount" prefWidth="250.0" styleClass="menu-button"
+                        text="Create New Account"/>
+                <Button fx:id="viewAccountDetailsBtn" maxWidth="300.0" mnemonicParsing="false"
+                        onAction="#handleViewAccountDetails" prefWidth="250.0" styleClass="menu-button"
+                        text="View Account Details"/>
+                <Button fx:id="updateAccountBtn" maxWidth="300.0" mnemonicParsing="false"
+                        onAction="#handleUpdateAccount" prefWidth="250.0" styleClass="menu-button"
+                        text="Update Account Details"/>
+                <Button fx:id="helpBtn" maxWidth="300.0" mnemonicParsing="false" onAction="#handleHelp"
+                        prefWidth="250.0" styleClass="menu-button" text="Help"/>
+                <Button fx:id="backBtn" maxWidth="300.0" mnemonicParsing="false" onAction="#handleBackToMain"
+                        prefWidth="250.0" styleClass="menu-button" text="Return to Main Menu"/>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-label" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="15.0"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>

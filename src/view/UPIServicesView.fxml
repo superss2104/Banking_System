@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="700.0" stylesheets="/Styles/base.css"
+            xmlns="http://javafx.com/javafx/17" fx:controller="controller.UPIServicesController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="header-label" text="UPI Services">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="20.0"/>
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="welcomeLabel" text="Welcome">
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane alignment="CENTER" hgap="10" vgap="10">
+                    <children>
+                        <Label text="Select Account:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <ComboBox fx:id="accountComboBox" prefWidth="200" promptText="Select Account"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                        <Label text="Register New UPI ID:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <TextField fx:id="upiIdField" prefWidth="200" promptText="Enter New UPI ID"
+                                   GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                        <Label text="From UPI ID:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                        <ComboBox fx:id="fromUpiComboBox" prefWidth="200" promptText="Select Sender UPI ID"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                        <Label text="To UPI ID:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                        <ComboBox fx:id="toUpiComboBox" prefWidth="200" promptText="Select Receiver UPI ID"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                        <Label text="Amount:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        <TextField fx:id="amountField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                        <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0"/>
+                    </padding>
+                </GridPane>
+
+                <Button fx:id="registerUpiBtn" maxWidth="300.0" mnemonicParsing="false" onAction="#handleRegisterUPI"
+                        prefWidth="250.0" styleClass="menu-button" text="1. Register UPI ID"/>
+                <Button fx:id="makePaymentBtn" maxWidth="300.0" mnemonicParsing="false" onAction="#handleMakePayment"
+                        prefWidth="250.0" styleClass="menu-button" text="2. Make UPI Payment"/>
+                <Button fx:id="checkStatusBtn" maxWidth="300.0" mnemonicParsing="false" onAction="#handleCheckStatus"
+                        prefWidth="250.0" styleClass="menu-button" text="3. Check Payment Status"/>
+                <Button maxWidth="300.0" mnemonicParsing="false" onAction="#handleHelp" prefWidth="250.0"
+                        styleClass="menu-button" text="4. Help"/>
+                <Button maxWidth="300.0" mnemonicParsing="false" onAction="#handleBackToMain" prefWidth="250.0"
+                        styleClass="menu-button" text="5. Return to Main Menu"/>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-label" text="Ready" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="15.0"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>

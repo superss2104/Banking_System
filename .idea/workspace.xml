@@ -7,7 +7,91 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20508bcc-41b7-471f-8d24-c423378475c9" name="Changes" comment="update" />
+    <list default="true" id="20508bcc-41b7-471f-8d24-c423378475c9" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/src/Application/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/AccountOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/AdminControls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/Authenticator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/CustomerInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/Reporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/TransactionOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/SystemMonitorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/TransactionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/UPIService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Styles/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/AccountOperationsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/AdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/AdminDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/CustomerDashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/ProfileViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/RegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/SystemMonitorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/TransactionOperationsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UPIServicesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UpiController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/DatabaseConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/DatabaseInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/HashPassword.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/UPITransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/account-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/app-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/bank-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/confirm-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/deposit-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/help-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/history-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/login-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/logout-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/profile-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/register-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/transaction-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/transfer-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/upi-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/view-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/withdraw-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/AlertHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/AuditLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/EncryptionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/PreferencesManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/SceneManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/SystemMonitoring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AccountManagement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AccountOperationsView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AccountView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AdminDashboardView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AdminView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/CustomerDashboardView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/DashboardView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/LoginView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ProfileView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/RegisterView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/SystemMonitorView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/TransactionOperationsView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/TransactionView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/UPIServicesView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/UpiView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/UserProfileView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,12 +121,12 @@
     &quot;assignee&quot;: &quot;Shreyansh-iittirupati&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Shreyansh-iittirupati/BankingSystem.git&quot;,
-    &quot;accountId&quot;: &quot;b532b005-8256-4a99-b95f-f122e28baa12&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/superss2104/Banking_System.git",
+    "accountId": "30896093-00e0-4264-922a-ae1045c56da2"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -145,6 +229,15 @@
       <option name="presentableId" value="Default" />
       <updated>1740500604019</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1745748665237</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745748665237</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,7 +256,8 @@
       <path value="$PROJECT_DIR$/src" />
     </ignored-roots>
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

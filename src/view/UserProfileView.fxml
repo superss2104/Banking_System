@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="700.0" stylesheets="/Styles/base.css"
+            xmlns="http://javafx.com/javafx/17" fx:controller="controller.UserProfileController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="header-label" text="User Profile">
+                    <font>
+                        <Font name="System Bold" size="24.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="20.0"/>
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" styleClass="card" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane hgap="20.0" vgap="15.0">
+                    <columnConstraints>
+                        <columnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="150.0"/>
+                        <columnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <rowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <rowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <rowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <rowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <rowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <rowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Username:" styleClass="label-info"/>
+                        <Label text="User ID:" styleClass="label-info" GridPane.rowIndex="1"/>
+                        <Label text="Name:" styleClass="label-info" GridPane.rowIndex="2"/>
+                        <Label text="Email:" styleClass="label-info" GridPane.rowIndex="3"/>
+                        <Label text="Phone:" styleClass="label-info" GridPane.rowIndex="4"/>
+                        <Label text="Account Status:" styleClass="label-info" GridPane.rowIndex="5"/>
+
+                        <Label fx:id="usernameLabel" styleClass="label-info" GridPane.columnIndex="1"/>
+                        <Label fx:id="userIdLabel" styleClass="label-info" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+                        <Label fx:id="nameLabel" styleClass="label-info" GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+                        <Label fx:id="emailLabel" styleClass="label-info" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3"/>
+                        <Label fx:id="phoneLabel" styleClass="label-info" GridPane.columnIndex="1"
+                               GridPane.rowIndex="4"/>
+                        <Label fx:id="statusLabel" styleClass="label-success" GridPane.columnIndex="1"
+                               GridPane.rowIndex="5"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                    </VBox.margin>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <Button fx:id="editProfileBtn" mnemonicParsing="false" onAction="#handleEditProfile"
+                                styleClass="secondary-button" text="Edit Profile"/>
+                        <Button fx:id="changePasswordBtn" mnemonicParsing="false" onAction="#handleChangePassword"
+                                styleClass="secondary-button" text="Change Password"/>
+                        <Button fx:id="backBtn" mnemonicParsing="false" onAction="#handleBackToDashboard"
+                                styleClass="menu-button" text="Back to Dashboard"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="10.0"/>
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="40.0" right="40.0" top="10.0"/>
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="messageLabel" styleClass="status-label" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="15.0"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>

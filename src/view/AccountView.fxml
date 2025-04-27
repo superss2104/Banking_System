@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="controller.AccountController"
+            stylesheets="/Styles/base.css"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <top>
+        <VBox alignment="CENTER" styleClass="header-section">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Account Management" styleClass="header-label">
+                <VBox.margin>
+                    <Insets bottom="10"/>
+                </VBox.margin>
+            </Label>
+            <Label fx:id="welcomeLabel" text="Welcome, User" styleClass="profile-label">
+                <VBox.margin>
+                    <Insets bottom="10"/>
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER" styleClass="control-bar">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <ComboBox fx:id="accountTypeCombo" promptText="Select Account Type" prefWidth="200"/>
+                <TextField fx:id="accountDetailsField" promptText="Account Details" prefWidth="250"/>
+                <Button fx:id="createAccountButton" text="Create Account" onAction="#handleCreateAccount"
+                        styleClass="action-button"/>
+            </HBox>
+
+            <TableView fx:id="accountsTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="accountIdColumn" text="Account Number" prefWidth="120"/>
+                    <TableColumn fx:id="balanceColumn" text="Balance" prefWidth="100"/>
+                    <TableColumn fx:id="accountTypeColumn" text="Type" prefWidth="100"/>
+                    <TableColumn fx:id="createdAtColumn" text="Created On" prefWidth="150"/>
+                    <TableColumn fx:id="activeColumn" text="Active" prefWidth="80"/>
+                </columns>
+                <placeholder>
+                    <Label text="No accounts available. Create a new account to get started."/>
+                </placeholder>
+            </TableView>
+
+            <HBox spacing="15" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Button fx:id="viewDetailsButton" text="View Details" onAction="#handleViewDetails"
+                        styleClass="action-button"/>
+                <Button fx:id="updateDetailsButton" text="Update Details" onAction="#handleUpdateDetails"
+                        styleClass="action-button"/>
+                <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBack"
+                        styleClass="secondary-button"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-label" text="Select an account to view or update details"
+               wrapText="true" minHeight="40">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>
