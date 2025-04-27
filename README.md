@@ -1,150 +1,160 @@
 
-Banking System
-A Java-based banking application built with JavaFX and MySQL, designed to manage accounts, transactions, UPI services, and more. It includes separate dashboards for customers and admins, with features like login, registration, profile management, and transaction operations.
+# Banking System
 
-🧾 Features
-Create and manage user accounts
+A **Java-based banking application** using **JavaFX** and **MySQL**. It manages user accounts, transactions, UPI services, and more, offering separate dashboards for customers and admins.
 
-Secure login/logout and registration functionality
+---
 
-Deposit, withdraw, and transfer funds
+## 🧾 Features
 
-Perform UPI-based transactions
+- User account creation and management
+- Secure login, logout, and registration
+- Deposit, withdraw, and transfer funds
+- UPI-based transactions
+- Separate customer and admin dashboards
+- JavaFX front-end with custom CSS
+- MVC architecture
+- Database integration with MySQL
 
-Separate dashboards for customers and admins
+---
 
-Clean, styled JavaFX interface with custom CSS
+## 🏗️ Project Structure
 
-Modular architecture with MVC pattern
-
-Database integration with MySQL
-
-🏗️ Project Structure
-graphql
-Copy
-Edit
+```
 Banking_System/
-├── Application/        # Main application launcher
-├── Interfaces/         # Interface definitions for service abstraction
-├── Service/            # Business logic (account, transaction, UPI services)
-├── Styles/             # CSS for UI styling
-├── controller/         # JavaFX controllers for FXML views
-├── database/           # Database connectivity and setup
-├── model/              # Data models (Account, Transaction, etc.)
-├── resources/          # Static resources (icons, images)
-├── utils/              # Helper classes (encryption, logging, etc.)
-└── view/               # FXML UI layouts
-🚀 Getting Started
-Prerequisites
-Java Development Kit (JDK): Version 11 or later
+├── Application/         # Main application launcher
+├── Interfaces/          # Service abstractions
+├── Service/             # Business logic
+├── Styles/              # JavaFX styling (CSS)
+├── controller/          # JavaFX controllers
+├── database/            # Database connection and setup
+├── model/               # Data models
+├── resources/           # Static assets (icons, images)
+├── utils/               # Helper classes (encryption, logging, etc.)
+└── view/                # FXML layouts
+```
 
-JavaFX SDK: Required for the GUI
+---
 
-MySQL: For the database
+## 🚀 Getting Started
 
-MySQL Connector/J: JDBC driver for MySQL connectivity
+### Prerequisites
 
-IntelliJ IDEA (or another IDE): Recommended for running the project
+- Java Development Kit (JDK) 11+
+- JavaFX SDK
+- MySQL server
+- MySQL Connector/J (JDBC driver)
+- IntelliJ IDEA (recommended)
 
-🛠️ Installation Steps
-Clone the Repository
-Clone the repository to your local machine:
+---
 
-bash
-Copy
-Edit
+## 🛠️ Installation Steps
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/superss2104/Banking_System.git
 cd Banking_System
-Set Up JavaFX
-Download the JavaFX SDK from Gluon and extract it to a directory (e.g., C:\JavaFX or /opt/javafx).
+```
 
-In IntelliJ IDEA:
+### 2. Set Up JavaFX
 
-Go to File > Project Structure > Libraries.
+- Download JavaFX SDK from [Gluon](https://gluonhq.com/products/javafx/).
+- In IntelliJ:
+  - Go to **File > Project Structure > Libraries > + > Java**.
+  - Add the `lib/` folder inside the JavaFX SDK.
 
-Click +, select Java, and navigate to the lib folder of the JavaFX SDK.
+### 3. Add MySQL Connector/J
 
-Add the library and apply the changes.
+- Download from the [official MySQL site](https://dev.mysql.com/downloads/connector/j/).
+- In IntelliJ:
+  - Go to **File > Project Structure > Libraries > + > Java**.
+  - Add the `mysql-connector-java-xxx.jar`.
 
-Add MySQL Connector/J
-Download the MySQL Connector/J JAR file from the official MySQL website.
+### 4. Configure MySQL Connection
 
-In IntelliJ:
+- Open `src/database/DatabaseConnector.java`.
+- Update these fields:
 
-Go to File > Project Structure > Libraries.
-
-Click +, select Java, and add the mysql-connector-java-x.x.xx.jar file.
-
-Apply the changes.
-
-Set Up MySQL Connection
-In order to set up the database connection:
-
-Navigate to src/database/DatabaseConnector.java.
-
-Update the following connection details in the code to match your MySQL setup:
-
-java
-Copy
-Edit
+```java
 String url = "jdbc:mysql://localhost:3306/banking_system";
-String user = "root";  // Your MySQL username
-String password = "yourpassword";  // Your MySQL password
-Configure the Run Environment
-Set up the JavaFX run configuration:
+String user = "your-username";
+String password = "your-password";
+```
 
-Go to Run > Edit Configurations.
+✅ The database and tables are created automatically when you run the application.
 
-Add a new Application configuration.
+---
 
-Set the Main class to Application.Main (located in src/Application/Main.java).
+### 5. Configure the Run Settings
 
-Add the following VM options (replace path/to/javafx-sdk with the actual path):
+- Go to **Run > Edit Configurations > + > Application**.
+- Set **Main class** to: `Application.Main`
+- Add these **VM options** (adjust path):
 
-css
-Copy
-Edit
---module-path "path/to/javafx-sdk/lib" --add-modules javafx.controls,javafx.fxml
-Run the Application
-Ensure your MySQL server is running. The application will automatically handle setting up the necessary database tables when it first runs.
-Click Run > Run 'Main'.
+```
+--module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+```
 
-Using the Application
+### 6. Run the Application
 
-Login: Use the default admin credentials (if set) or register a new user.
+- Start your MySQL server.
+- Click **Run** (`▶️`) on `Main.java`.
+- The **Login Screen** will appear.
 
-Dashboards: Navigate through the customer or admin dashboard to access features like account management, transactions, and UPI services.
+---
 
-🧱 Tech Stack
-Java: Core programming language
+## 🧱 Tech Stack
 
-JavaFX: For the GUI
+| Technology | Usage                 |
+|------------|------------------------|
+| Java       | Core programming       |
+| JavaFX     | GUI development         |
+| JDBC       | Database connectivity   |
+| MySQL      | Database storage        |
+| CSS        | JavaFX UI styling       |
 
-JDBC: For database connectivity
+---
 
-MySQL: Database management
+## 🔧 Troubleshooting
 
-CSS: For JavaFX UI styling
+- **Database Connection Error**:  
+  - Ensure MySQL server is running.
+  - Verify credentials inside `DatabaseConnector.java`.
 
-🔧 Troubleshooting
-Database Connection Error: Ensure MySQL is running and accessible. The application will automatically create the necessary tables in the database.
+- **JavaFX Errors**:  
+  - Confirm JavaFX SDK path and modules.
 
-JavaFX Errors: Verify the JavaFX SDK path in the VM options and ensure all required modules are included.
+- **Missing Resources**:  
+  - Make sure images, CSS, and FXML files are placed correctly.
 
-Missing Resources: Ensure all files in src/resources and src/Styles are correctly placed and referenced in the FXML files.
+---
 
-🤝 Contributing
-Fork the repository.
+## 🤝 Contributing
 
-Create a new branch (git checkout -b feature-branch).
+```bash
+# Fork the repository
+git checkout -b feature-branch
+git commit -m "Add new feature"
+git push origin feature-branch
+```
+Open a pull request after pushing your branch 🚀.
 
-Make your changes and commit (git commit -m "Add feature").
+---
 
-Push to your branch (git push origin feature-branch).
+## 📄 License
 
-Create a pull request.
+This project is licensed under the [MIT License](LICENSE).
 
-📄 License
-This project is licensed under the MIT License.
+---
 
-Made with 💻 by Suhail & Shreyansh
+## 👨‍💻 Authors
+
+- [Suhail](https://github.com/superss2104)
+- [Shreyansh](https://github.com/Shreyansh-iittirupati)
+
+---
+
+## ✅ Notes
+- No manual database setup needed — it's auto-created.
+- Update your **DatabaseConnector.java** file correctly before running.
