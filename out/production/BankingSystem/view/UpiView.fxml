@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="controller.UpiController"
+            stylesheets="@../Styles/base.css"
+            prefHeight="600.0" prefWidth="800.0">
+
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <Label text="UPI Services" styleClass="header-label">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Label>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="upiTabPane">
+            <Tab text="Register UPI ID" closable="false">
+                <VBox spacing="15">
+                    <padding>
+                        <Insets top="20" right="40" bottom="20" left="40"/>
+                    </padding>
+
+                    <Label text="Your Existing UPI IDs:" styleClass="sub-header-label"/>
+                    <ListView fx:id="existingUpiIdsList" prefHeight="150"/>
+
+                    <Separator/>
+
+                    <Label text="Register New UPI ID:" styleClass="sub-header-label"/>
+
+                    <HBox spacing="15" alignment="CENTER">
+                        <Label text="New UPI ID:"/>
+                        <TextField fx:id="newUpiIdField" promptText="e.g., username@bankupi" prefWidth="300"/>
+                        <Button fx:id="registerUpiButton" text="Register" onAction="#handleRegisterUpi"
+                                styleClass="primary-button"/>
+                    </HBox>
+
+                    <Label text="Note: UPI ID must be in the format 'username@provider'"
+                           styleClass="help-text"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Make UPI Payment" closable="false">
+                <VBox spacing="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="20" right="40" bottom="20" left="40"/>
+                    </padding>
+
+                    <GridPane vgap="15" hgap="15" alignment="CENTER">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="150" prefWidth="150"/>
+                            <ColumnConstraints minWidth="250" prefWidth="300"/>
+                        </columnConstraints>
+
+                        <Label text="From UPI ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="sourceUpiCombo" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                  prefWidth="300"/>
+
+                        <Label text="To UPI ID:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <TextField fx:id="recipientUpiField" promptText="Enter recipient's UPI ID"
+                                   GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                        <Label text="Amount:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="paymentAmountField" promptText="Enter amount"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                        <Label text="Description:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <TextField fx:id="paymentDescriptionField" promptText="Optional"
+                                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    </GridPane>
+
+                    <Button fx:id="makePaymentButton" text="Make Payment" onAction="#handleMakePayment"
+                            styleClass="primary-button" prefWidth="200"/>
+                </VBox>
+            </Tab>
+
+            <Tab text="Check Payment Status" closable="false">
+                <VBox spacing="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="20" right="40" bottom="20" left="40"/>
+                    </padding>
+
+                    <HBox spacing="15" alignment="CENTER">
+                        <Label text="Transaction ID:"/>
+                        <TextField fx:id="transactionIdField" promptText="Enter transaction ID" prefWidth="300"/>
+                        <Button fx:id="checkStatusButton" text="Check Status" onAction="#handleCheckStatus"
+                                styleClass="primary-button"/>
+                    </HBox>
+
+                    <Separator/>
+
+                    <Label fx:id="statusResultLabel" styleClass="result-text"
+                           wrapText="true" alignment="CENTER" textAlignment="CENTER"
+                           prefHeight="150"/>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBack"
+                    styleClass="secondary-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>

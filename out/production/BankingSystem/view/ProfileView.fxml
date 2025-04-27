@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="/Styles/base.css"
+            xmlns="http://javafx.com/javafx/17" fx:controller="controller.UserProfileController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="header-label" text="User Profile"/>
+                <Label fx:id="messageLabel" text="Welcome" styleClass="sub-header-label">
+                    <VBox.margin>
+                        <Insets bottom="25.0"/>
+                    </VBox.margin>
+                </Label>
+            </children>
+            <padding>
+                <Insets top="30.0" bottom="15.0"/>
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefWidth="500.0" maxWidth="800.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane alignment="CENTER" hgap="30" vgap="15">
+                    <padding>
+                        <Insets bottom="30.0" left="60.0" right="60.0"/>
+                    </padding>
+                    <children>
+                        <Label text="User ID:" styleClass="profile-label" GridPane.columnIndex="0"
+                               GridPane.rowIndex="0"/>
+                        <Label fx:id="userIdLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="0" wrapText="true"/>
+
+                        <Label text="Username:" styleClass="profile-label" GridPane.columnIndex="0"
+                               GridPane.rowIndex="1"/>
+                        <Label fx:id="usernameLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1" wrapText="true"/>
+
+                        <Label text="First Name:" styleClass="profile-label" GridPane.columnIndex="0"
+                               GridPane.rowIndex="2"/>
+                        <Label fx:id="firstNameLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="2" wrapText="true"/>
+
+                        <Label text="Last Name:" styleClass="profile-label" GridPane.columnIndex="0"
+                               GridPane.rowIndex="3"/>
+                        <Label fx:id="lastNameLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3" wrapText="true"/>
+
+                        <Label text="Email:" styleClass="profile-label" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                        <Label fx:id="emailLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="4" wrapText="true"/>
+
+                        <Label text="Phone:" styleClass="profile-label" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                        <Label fx:id="phoneLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="5" wrapText="true"/>
+
+                        <Label text="Account Created:" styleClass="profile-label" GridPane.columnIndex="0"
+                               GridPane.rowIndex="6"/>
+                        <Label fx:id="createdAtLabel" styleClass="profile-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="6" wrapText="true"/>
+                    </children>
+                </GridPane>
+
+                <Button fx:id="backBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#handleBackToDashboard"
+                        prefWidth="300.0" styleClass="menu-button" text="Return to Main Menu"/>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-label" text="Ready" wrapText="true" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="20.0"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>

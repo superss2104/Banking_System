@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="@base.css" xmlns="http://javafx.com/javafx/17"
+            fx:controller="controller.SystemMonitorController">
+    <top>
+        <HBox alignment="CENTER" styleClass="header">
+            <Label text="System Monitoring Dashboard" styleClass="header-title"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane styleClass="scroll-pane" fitToWidth="true" fitToHeight="true">
+            <VBox spacing="20" padding="20">
+                <!-- System Overview -->
+                <VBox styleClass="panel" spacing="10">
+                    <Label text="System Overview" styleClass="panel-title"/>
+                    <GridPane styleClass="grid-pane">
+                        <Label text="Total Users:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="0"/>
+                        <Label fx:id="totalUsersLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="0"/>
+
+                        <Label text="Active Users:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="1"/>
+                        <Label fx:id="activeUsersLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+
+                        <Label text="Total Transactions:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="2"/>
+                        <Label fx:id="totalTransactionsLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+
+                        <Label text="Total Amount:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="3"/>
+                        <Label fx:id="totalAmountLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3"/>
+
+                        <Label text="System Uptime:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="4"/>
+                        <Label fx:id="uptimeLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="4"/>
+                    </GridPane>
+                </VBox>
+
+                <Separator styleClass="separator"/>
+
+                <!-- Performance Metrics -->
+                <VBox styleClass="panel" spacing="10">
+                    <Label text="Performance Metrics" styleClass="panel-title"/>
+                    <GridPane styleClass="grid-pane">
+                        <Label text="CPU Usage:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="0"/>
+                        <Label fx:id="cpuUsageLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="0"/>
+
+                        <Label text="Memory Usage:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="1"/>
+                        <Label fx:id="memoryUsageLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="1"/>
+
+                        <Label text="Disk Usage:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="2"/>
+                        <Label fx:id="diskUsageLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="2"/>
+
+                        <Label text="Response Time:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="3"/>
+                        <Label fx:id="responseTimeLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="3"/>
+
+                        <Label text="Active Connections:" styleClass="label-title" GridPane.columnIndex="0"
+                               GridPane.rowIndex="4"/>
+                        <Label fx:id="activeConnectionsLabel" styleClass="label-value" GridPane.columnIndex="1"
+                               GridPane.rowIndex="4"/>
+                    </GridPane>
+                </VBox>
+
+                <Separator styleClass="separator"/>
+
+                <!-- Recent Security Events -->
+                <VBox styleClass="panel" spacing="10">
+                    <Label text="Recent Security Events" styleClass="panel-title"/>
+                    <TableView fx:id="securityEventsTable" styleClass="table-view" prefHeight="200">
+                        <columns>
+                            <TableColumn fx:id="timestampColumn" text="Timestamp" prefWidth="150"/>
+                            <TableColumn fx:id="eventTypeColumn" text="Event Type" prefWidth="150"/>
+                            <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="300"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <Separator styleClass="separator"/>
+
+                <!-- System Health Status -->
+                <VBox styleClass="panel" spacing="10">
+                    <Label text="System Health Status" styleClass="panel-title"/>
+                    <Label fx:id="healthStatusLabel" styleClass="label-value"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" styleClass="footer">
+            <Label fx:id="lastUpdatedLabel" styleClass="footer-label" text="Last Updated: "/>
+        </HBox>
+    </bottom>
+</BorderPane> 

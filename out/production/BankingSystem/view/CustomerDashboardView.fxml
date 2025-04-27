@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" stylesheets="/Styles/base.css"
+            xmlns="http://javafx.com/javafx/17" fx:controller="controller.CustomerDashboardController">
+    <top>
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <children>
+                <Label styleClass="header-label" text="Banking System - Customer Dashboard"/>
+                <Label fx:id="welcomeLabel" text="Welcome, User" styleClass="sub-header-label">
+                    <VBox.margin>
+                        <Insets bottom="25.0"/>
+                    </VBox.margin>
+                </Label>
+            </children>
+            <padding>
+                <Insets top="30.0" bottom="15.0"/>
+            </padding>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefWidth="450.0" maxWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Make UPI Payment" styleClass="section-label"/>
+                <TextField fx:id="fromUpiIdField" promptText="Your UPI ID (e.g., user@bank)" prefWidth="300.0" maxWidth="400.0"/>
+                <TextField fx:id="toUpiIdField" promptText="Recipient UPI ID (e.g., friend@bank)" prefWidth="300.0" maxWidth="400.0"/>
+                <TextField fx:id="amountField" promptText="Amount (e.g., 100.00)" prefWidth="300.0" maxWidth="400.0"/>
+                <Button fx:id="makePaymentBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#handleMakePayment"
+                        prefWidth="300.0" styleClass="menu-button" text="Make Payment"/>
+
+                <Button fx:id="accountOperationsBtn" maxWidth="400.0" mnemonicParsing="false"
+                        onAction="#handleAccountOperations" prefWidth="300.0" styleClass="menu-button"
+                        text="1. Account Operations"/>
+                <Button fx:id="transactionOperationsBtn" maxWidth="400.0" mnemonicParsing="false"
+                        onAction="#handleTransactionOperations" prefWidth="300.0" styleClass="menu-button"
+                        text="2. Transaction Operations"/>
+                <Button fx:id="upiServicesBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#handleUPIServices"
+                        prefWidth="300.0" styleClass="menu-button" text="3. UPI Services"/>
+                <Button fx:id="viewProfileBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#handleViewProfile"
+                        prefWidth="300.0" styleClass="menu-button" text="4. View Profile"/>
+                <Button fx:id="helpBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#handleHelp"
+                        prefWidth="300.0" styleClass="menu-button" text="5. Help"/>
+                <Button fx:id="logoutBtn" maxWidth="400.0" mnemonicParsing="false" onAction="#handleLogout"
+                        prefWidth="300.0" styleClass="menu-button" text="6. Logout"/>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="statusLabel" styleClass="status-label" wrapText="true" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="20.0"/>
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>

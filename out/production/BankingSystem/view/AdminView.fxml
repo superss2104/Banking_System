@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx"
+            fx:controller="controller.AdminController" stylesheets="@../Styles/base.css" prefHeight="600.0"
+            prefWidth="800.0">
+    <top>
+        <VBox alignment="CENTER" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="Admin Management" styleClass="header-label">
+                <font>
+                    <Font name="System Bold" size="24.0"/>
+                </font>
+            </Label>
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="adminTabPane">
+            <Tab text="User Management" closable="false">
+                <VBox spacing="15">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <GridPane vgap="10" hgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="200" prefWidth="200"/>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="200" prefWidth="200"/>
+                        </columnConstraints>
+                        <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <TextField fx:id="usernameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                        <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                        <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                        <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+                        <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                        <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+                        <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <TextField fx:id="emailField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                        <Label text="Phone:" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+                        <TextField fx:id="phoneField" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+                        <Label text="Role:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="roleComboBox" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="200"/>
+                    </GridPane>
+                    <HBox spacing="15" alignment="CENTER">
+                        <Button fx:id="addUserButton" text="Add User" onAction="#handleAddUser"
+                                styleClass="primary-button"/>
+                        <Button fx:id="updateUserButton" text="Update User" onAction="#handleUpdateUser"
+                                styleClass="secondary-button"/>
+                        <Button fx:id="deleteUserButton" text="Delete User" onAction="#handleDeleteUser"
+                                styleClass="danger-button"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+            <Tab text="System Monitoring" closable="false">
+                <VBox spacing="10">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <HBox spacing="10" alignment="CENTER_RIGHT">
+                        <Button fx:id="refreshLogsButton" text="Refresh Logs" onAction="#handleRefreshLogs"
+                                styleClass="secondary-button"/>
+                    </HBox>
+                    <TextArea fx:id="systemLogsArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </Tab>
+            <Tab text="Report Generation" closable="false">
+                <VBox spacing="15">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <GridPane vgap="10" hgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints minWidth="120" prefWidth="120"/>
+                            <ColumnConstraints minWidth="200" prefWidth="200"/>
+                        </columnConstraints>
+                        <Label text="Report Type:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                        <ComboBox fx:id="reportTypeCombo" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                  prefWidth="200"/>
+                        <Label text="Start Date:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                        <DatePicker fx:id="startDatePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                    prefWidth="200"/>
+                        <Label text="End Date:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                        <DatePicker fx:id="endDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                    prefWidth="200"/>
+                    </GridPane>
+                    <Button fx:id="generateReportButton" text="Generate Report" onAction="#handleGenerateReport"
+                            styleClass="primary-button"/>
+                    <TextArea fx:id="reportResultArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS"/>
+                </VBox>
+            </Tab>
+            <Tab text="Account Management" closable="false">
+                <VBox spacing="15" alignment="CENTER">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <ListView fx:id="accountListView" prefHeight="200" prefWidth="300" VBox.vgrow="ALWAYS"/>
+                    <HBox spacing="15" alignment="CENTER">
+                        <Button fx:id="suspendAccountButton" text="Suspend Account" onAction="#handleSuspendAccount"
+                                styleClass="warning-button"/>
+                        <Button fx:id="reactivateAccountButton" text="Reactivate Account"
+                                onAction="#handleReactivateAccount" styleClass="success-button"/>
+                    </HBox>
+                </VBox>
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </padding>
+            <Button fx:id="backButton" text="Back to Dashboard" onAction="#handleBackToDashboard"
+                    styleClass="menu-button"/>
+            <Button fx:id="logoutButton" text="Logout" onAction="#handleLogout" styleClass="danger-button"/>
+        </HBox>
+    </bottom>
+</BorderPane>
